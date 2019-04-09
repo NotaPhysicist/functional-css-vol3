@@ -1,0 +1,27 @@
+@font-face {
+   font-family: 'Vag Handwritten';
+   src: url('../fonts/VAG-HandWritten-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Veteran Typewriter';
+   src: url('../fonts/veteran_typewriter-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Special Elite';
+   src: url('../fonts/SpecialElite-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Font Awesome';
+   src: url('../fonts/fontawesome.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
