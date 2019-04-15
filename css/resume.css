@@ -374,3 +374,9 @@ summary::marker {
 #experience .role:nth-last-of-type(5) {
    margin-top: 0;
 }
+
+/* ----- PROJECTS SECTION ----- */
+
+#projects .info {
+   column-count: 2;
+}
