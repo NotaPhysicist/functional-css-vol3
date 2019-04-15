@@ -1,0 +1,358 @@
+/* ----------------------------------------------
+ * FOUNDATIONAL STYLES
+ * ---------------------------------------------- */
+
+ *,
+:before,
+:after {
+   box-sizing: border-box;
+}
+
+a {
+   text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:focus {
+   color: blue;
+}
+
+body,
+body * {
+   user-select: none;
+}
+
+body {
+   background-color: #eee;
+   background-image: url("./images/leather.2.jpg");
+   background-size: 215px 150px;
+}
+
+body:before {
+   content: "";
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.3);
+   z-index: -1;
+}
+
+/* ----- SET UP THE PAGE ----- */
+
+.page {
+   width: 770px;
+   height: 1020px;
+   position: absolute;
+   margin: 0 auto 20px;
+   margin-left: 40px;  /*temp setting to see tabs*/
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 20px 70px 70px 70px;
+   font-family: "Special Elite";
+}
+
+.page:before,
+.page:after {
+   content: "";
+   position: absolute;
+   top: 20px;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: -1;
+   border: 1px solid #f3e8e2;
+   background-image: url("./images/oldpaper.4.jpg");
+}
+
+.page:after {
+   background-image: url(none);
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.page:not(:target) ~ .page:last-of-type {
+   z-index: 100;
+}
+
+/* ----- SET UP THE TABS ----- */
+
+.page > a {
+   position: absolute;
+   text-decoration: none;
+   font: bold 14px/2 "Vag Handwritten", sans-serif;
+   background-color: #fcf0ad;
+   width: 90px;
+   letter-spacing: 1px;
+   height: 53px;
+   text-align: center;
+   color: #525252;
+   left: -30px;
+   top: 120px;
+   padding: 0 10px;
+   transform-origin: top left;
+   transform: rotate(-88deg);
+   opacity: 0.5;
+}
+
+/* ----- VISUALLY SEPARATE THE TABS ----- */
+
+.page:nth-of-type(1) > a {
+   top: 215px;
+   transform: rotate(-93deg);
+   background-color: #f9a55b;
+}
+
+.page:nth-of-type(2) > a {
+   top: 310px;
+   transform: rotate(-91deg);
+   background-color: #d0e17d;
+}
+
+.page:nth-of-type(3) > a {
+   top: 398px;
+   transform: rotate(-87deg);
+   background-color: #99c7bc;
+}
+
+.page:nth-of-type(4) > a {
+   top: 500px;
+   transform: rotate(-92deg);
+   background-color: #bab7a9;
+}
+
+.page:nth-of-type(5) > a {
+   top: 590px;
+   transform: rotate(-88deg);
+   background-color: #deac2f;
+}
+
+.page:nth-of-type(6) > a {
+   top: 690px;
+   transform: rotate(-91deg);
+   background-color: #ed839d;
+}
+
+.page:nth-of-type(7) > a {
+   top: 785px;
+   transform: rotate(-87deg);
+   background-color: #cd9ec0;
+}
+
+/* ----- IMPLEMENT TAB FUNCTIONALITY ----- */
+
+.page:target {
+   z-index: 100;
+}
+
+.page:target ~ .page:last-of-type {
+   z-index: 1;
+}
+
+.page:target > a {
+   opacity: 1;
+}
+
+.page:not(:target) > a:hover {
+   opacity: 0.85;
+}
+
+.page:not(:target) ~ .page:last-of-type > a {
+   opacity: 1;
+}
+
+.page:target ~ .page:last-of-type > a {
+   opacity: 0.5;
+}
+
+.page:target ~ .page:last-of-type > a:hover {
+   opacity: 0.85;
+}
+
+/* ----- MAKE THE PAGES APPEAR LOOSELY STACKED ----- */
+
+.page {
+   transform-origin: center center;
+}
+
+.page:nth-of-type(2) {
+   transform: rotate(0.6deg);
+}
+
+.page:nth-of-type(4) {
+   transform: rotate(0.8deg);
+}
+.page:nth-of-type(6) {
+   transform: rotate(0.7deg);
+}
+.page:nth-of-type(7) {
+   transform: rotate(0.44deg);
+}
+
+/* ----- DYNAMICALLY GENERATE PAGE COUNTER ----- */
+
+.page > footer {
+   position: absolute;
+   bottom: 20px;
+   left: 0;
+   right: 0;
+   text-align: center;
+   font: normal 12px/1 "Special Elite";
+}
+
+body {
+   counter-reset: pageNumber 0;
+}
+
+.page > footer:before {
+   counter-increment: pageNumber 1;
+   content: counter(pageNumber) " of 7";
+}
+
+/* ----- TITLE PAGE ----- */
+
+#title > header {
+   position: absolute;
+   text-align: center;
+   top: 33%;
+   left: 50%;
+   transform: translate(-50%);
+}
+
+#title h1 {
+   margin: 0;
+   font: normal 30px/2 "Veteran Typewriter";
+   letter-spacing: 3px;
+   white-space: nowrap;
+}
+
+#title h2 {
+   text-transform: uppercase;
+   font: bold 30px/2 "Veteran Typewriter";
+}
+
+/* ----- SECTION HEADINGS ----- */
+
+.page h1 {
+   margin-top: 70px;
+   font: normal 25px/1 "Special Elite";
+}
+
+.page h2 {
+   font-weight: bold;
+   font-size: 13px;
+   margin-bottom: 10px;
+}
+
+/* ----- ABOUT SECTION ----- */
+
+.page .info {
+   margin-top: 15px;
+}
+
+#about .info img {
+   float: left;
+   width: 20%;
+   margin: 5px 10px 10px 0;
+   filter: sepia(50%); 
+}
+
+.page .info p {
+   font: normal 13px/1.5 "Special Elite";
+}
+
+#about .info p {
+   width: calc(80% - 10px);
+   float: right;
+}
+
+#about .info p + p {
+   margin-top: 12px;
+}
+
+#about .info a:hover {
+   border-bottom: 1px dotted blue;
+}
+
+/* ----- EDUCATION SECTION ----- */
+
+.page .info div + div {
+   margin-top: 13px;
+}
+
+#education .info p {
+   font-size: 14px;
+}
+
+#education .info strong {
+   font-weight: bold;
+}
+
+#education .degree p + p {
+   margin-top: 5px;;
+}
+
+#education .degree details {
+   margin-top: 5px;
+}
+
+#education .degree details p {
+   font-size: 12px;
+   margin-left: 14px;
+}
+
+#education .degree summary {
+   font: normal 14px/1.5 "Special Elite";
+   outline: 0;
+   cursor: pointer;
+   font-style: italic;
+}
+
+summary::marker {
+   display: none;
+}
+
+/* ----- SKILLS SECTION ----- */
+
+#skills .info {
+   margin-top: 20px;
+}
+
+#skills .skillset h2 {
+   font-size: 16px;
+   margin-bottom: 16px;
+   letter-spacing: 1px;
+}
+
+#skills .skillset + .skillset {
+   margin-top: 20px;
+}
+
+#skills .skillset ul {
+   float: left;
+   width: 33%;
+}
+
+#skills .skillset {
+   overflow: hidden;
+}
+
+#skills .skillset ul:nth-last-of-type(n + 4) {
+   margin-top: 15px;
+}
+
+#skills .skillset ul > li {
+   font-size: 13px;
+}
+
+#skills .skillset ul > li:first-of-type ~ li + li {
+   margin-top: 5px;
+}
+
+#skills .skillset ul > li:first-of-type {
+   text-transform: uppercase;
+   margin-bottom: 7px;
+   font-size: 14px;
+   display: inline-block;
+   border-bottom: 1px dotted #000;
+}
