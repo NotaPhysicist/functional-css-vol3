@@ -356,3 +356,21 @@ summary::marker {
    display: inline-block;
    border-bottom: 1px dotted #000;
 }
+
+/* ----- EXPERIENCE SECTION ----- */
+
+#experience .role:nth-last-of-type(n + 4) {
+   float: left;
+   clear: left;
+   width: 48%;
+   margin-right: 2%;
+}
+
+#experience .role {
+   display: inline-block;
+   width: 50%;
+}
+
+#experience .role:nth-last-of-type(5) {
+   margin-top: 0;
+}
