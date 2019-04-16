@@ -380,3 +380,152 @@ summary::marker {
 #projects .info {
    column-count: 2;
 }
+
+/* ----- PHOTOS SECTION ----- */
+
+#gallery input {
+   display : none;
+}
+
+#gallery {
+   width: 630px;
+   height: 391px;
+   margin-top: 15px;
+   position: relative;
+}
+
+#gallery .viewer {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   border: solid #ccc;
+   border-width: 10px 10px 30px 10px;
+   border-image-source: url("./images/photo_border.png");
+   border-image-slice: 21 21 97 21;
+   border-image-repeat: stretch;
+}
+
+#gallery .viewer:before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: url("../images/pictures/baltimore_downtown.JPG") center center/cover no-repeat;
+   filter: sepia(50%);
+}
+
+#gallery .thumbnail {
+   position: absolute;
+   bottom: -72px;
+   width: 100px;
+   height: 62px;
+   left: 10px;
+   background: url("../images/pictures/baltimore_downtown.JPG") center center/cover no-repeat;
+   opacity: 0.6;
+   cursor: pointer;
+   filter: sepia(50%);
+}
+
+#gallery .thumbnail:nth-of-type(2) {
+   left: 137.5px;
+   background-image: url("../images/pictures/crestone_road.JPG");
+}
+
+#gallery .thumbnail:nth-of-type(3) {
+   left: 264px;
+   background-image: url("../images/pictures/reading_near_atlantic.JPG");
+}
+
+#gallery .thumbnail:nth-of-type(4) {
+   left: 391.5px;
+   background-image: url("../images//pictures/texas_sunset.JPG");
+}
+
+#gallery .thumbnail:nth-of-type(5) {
+   left: auto;
+   right: 10px;
+   background-image: url("../images//pictures/mb_sunset.JPG");
+}
+
+#gallery .thumbnail:hover {
+   opacity: 0.8;
+}
+
+#gallery input[type="radio"]:not(:checked) ~ .thumbnail:nth-of-type(1) {
+   opacity: 1;
+}
+
+#gallery input[type="radio"]:not(:first-of-type):checked ~ .thumbnail:nth-of-type(1) {
+   opacity: 0.6;
+}
+
+#gallery input[type="radio"]:not(:first-of-type):checked ~ .thumbnail:nth-of-type(1):hover {
+   opacity: 0.8;
+}
+
+#gallery input[type="radio"]:nth-of-type(1):checked ~ .thumbnail:nth-of-type(1),
+#gallery input[type="radio"]:nth-of-type(2):checked ~ .thumbnail:nth-of-type(2),
+#gallery input[type="radio"]:nth-of-type(3):checked ~ .thumbnail:nth-of-type(3),
+#gallery input[type="radio"]:nth-of-type(4):checked ~ .thumbnail:nth-of-type(4),
+#gallery input[type="radio"]:nth-of-type(5):checked ~ .thumbnail:nth-of-type(5) {
+   opacity: 1;
+}
+
+#gallery input[type="radio"]:nth-of-type(1):checked ~ .viewer:before {
+   background-image: url("../images/pictures/baltimore_downtown.JPG");
+}
+
+#gallery input[type="radio"]:nth-of-type(2):checked ~ .viewer:before {
+   background-image: url("../images/pictures/crestone_road.JPG");
+}
+
+#gallery input[type="radio"]:nth-of-type(3):checked ~ .viewer:before {
+   background-image: url("../images/pictures/reading_near_atlantic.JPG");
+}
+
+#gallery input[type="radio"]:nth-of-type(4):checked ~ .viewer:before {
+   background-image: url("../images/pictures/texas_sunset.JPG");
+}
+
+#gallery input[type="radio"]:nth-of-type(5):checked ~ .viewer:before {
+   background-image: url("../images/pictures/mb_sunset.JPG");
+}
+
+#gallery p {
+   position: absolute;
+   left: 10px;
+   right: 10px;
+   bottom: 0;
+   z-index: 2;
+   display: none;
+   color: #484848;
+   font-size: 11px;
+   line-height: 30px;
+   font-weight: normal;
+   font-style: italic;
+   letter-spacing: 1px;
+   text-shadow: 0 0 1px #fff;
+}
+
+#gallery input[type="radio"]:not(:checked) ~ p:nth-of-type(1) {
+   display: block;
+}
+
+#gallery input[type="radio"]:not(:first-of-type):checked ~ p:nth-of-type(1) {
+   display: none;
+}
+
+#gallery input[type="radio"]:nth-of-type(1):checked ~ p:nth-of-type(1),
+#gallery input[type="radio"]:nth-of-type(2):checked ~ p:nth-of-type(2),
+#gallery input[type="radio"]:nth-of-type(3):checked ~ p:nth-of-type(3),
+#gallery input[type="radio"]:nth-of-type(4):checked ~ p:nth-of-type(4),
+#gallery input[type="radio"]:nth-of-type(5):checked ~ p:nth-of-type(5) {
+   display: block;
+}
+
+#gallery p:nth-of-type(4),
+#gallery p:nth-of-type(5) {
+   text-align: right;
+}
