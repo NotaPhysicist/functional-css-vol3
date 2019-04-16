@@ -45,7 +45,7 @@ body:before {
    height: 1020px;
    position: absolute;
    margin: 0 auto 20px;
-   margin-left: 40px;  /*temp setting to see tabs*/
+   /*margin-left: 40px;  /*temp setting to see tabs*/
    top: 0;
    left: 0;
    right: 0;
@@ -528,4 +528,188 @@ summary::marker {
 #gallery p:nth-of-type(4),
 #gallery p:nth-of-type(5) {
    text-align: right;
+}
+
+/* ----- CONTACT SECTION ----- */
+
+#postcard {
+   width: 630px;
+   height: 450ps;
+   position: absolute;
+   top: 160px;
+   /* border: 1px solid black; */
+}
+
+#postcard:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 600px;
+   background: url("./images/soviet_postcard.5.png") no-repeat top left/630px 450px;
+   opacity: 0.75;
+}
+
+#postcard:after {
+   content: "";
+   position: absolute;
+   width: 150px;
+   height: 50px;
+   background: url("./images/tape.png") no-repeat top left/150px 50px;
+   top: -25px;
+   left: 50%;
+   margin-left: -75px;
+   opacity: 0.75;;
+}
+
+#postcard > * {
+   position: absolute;
+}
+
+#postcard > label {
+   top: 180px;
+   left: 45px;
+   z-index: 2;
+   font-style: italic;
+   font-size: 12px;
+   width: 55px;
+}
+
+#postcard > label:nth-of-type(2) {
+   top: 220px;
+}
+
+#postcard > label:nth-of-type(3) {
+   top: 260px;
+}
+
+#postcard > label:nth-of-type(4) {
+   top: 300px;
+}
+
+#postcard > label:nth-of-type(5) {
+   left: 340px;
+}
+
+#postcard > span, 
+#postcard > input {
+   position: absolute;
+   top: 180px;
+   font-size: 12px;
+   left: 110px;
+   width: 175px;
+   z-index: 1;
+}
+
+#postcard > span {
+   padding-left: 2px;
+}
+
+#postcard > input {
+   outline: 0;
+   border: 0;
+   background-color: rgba(255, 255, 255, 0.25);
+   padding: 0 2px;
+   font-family: "Special Elite";
+   line-height: 20px;
+}
+
+#postcard > input:first-of-type {
+   top: 215px;
+}
+
+#postcard > input:nth-of-type(2) {
+   top: 255px;
+}
+
+#postcard > input:nth-of-type(3) {
+   top: 295px;
+}
+
+#postcard > textarea {
+   position: absolute;
+   width: 235px;
+   height: 120px;
+   top: 200px; 
+   left: 340px;
+   border: 0;
+   background-color: rgba(255, 255, 255, 0.25);
+   outline: 0;
+   resize: none;
+   font: normal 12px "Special Elite";
+   overflow: hidden;
+}
+
+#postcard > textarea::-webkit-scrollbar {
+   display: none;
+}
+
+#postcard > input:invalid, 
+#postcard > textarea:invalid {
+   box-shadow: none;
+   background-color: rgba(240, 140, 0, 0.15);
+}
+
+#postcard > label:nth-last-of-type(2):before,
+#postcard > label:nth-last-of-type(3):before,
+#postcard > label:nth-last-of-type(4):before {
+   content: "";
+   position: absolute;
+   height: 5px;
+   width: 175px;
+   background: url("./images/underline.1.png") 0 -2px/cover no-repeat;
+   bottom: -9px;
+   right: -185px;
+}
+
+#postcard > label:nth-last-of-type(2):before {
+   background-image: url("./images/underline.2.png");
+}
+
+#postcard > label:nth-last-of-type(4):before {
+   background-image: url("./images/underline.3.png");
+}
+
+#postcard button,
+#postcard > input:valid ~ button[type="reset"],
+#postcard > textarea:valid ~ button[type="reset"],
+#postcard > input:valid ~ button[type="submit"],
+#postcard > textarea:valid ~ button[type="submit"] {
+   position: absolute;
+   top: 345px;
+   right: 65px;
+   font: bold 12px/2 "Special Elite";
+   letter-spacing: 1px;
+   color: rgba(20, 20, 20, 0.8);
+   text-shadow: -1px -1px 1px #eee;
+   padding: 0 10px;
+   outline: 0;
+   border: 1px solid rbga(129, 75, 0. 0.1);
+   border-radius: 5px;
+   background-color: rgba(255, 255, 255, 0.2);
+   background-image: linear-gradient(to bottom, rgba(129, 75, 0, 0.1), rgba(129, 75, 0, 0.3));
+   cursor: pointer;
+   pointer-events: all;
+}
+
+#postcard > button[type="submit"],
+#postcard > input:valid ~ button[type="submit"],
+#postcard > textarea:valid ~ button[type="submit"] {
+   right: 135px;
+}
+
+#postcard > button[type="reset"],
+#postcard > input:valid ~ button[type="submit"],
+#postcard > textarea:valid ~ button[type="submit"] {
+      pointer-events: none;
+   border-color: #bbb;
+   color: rgba(50, 50, 50, 0.7);
+   text-shadow: 1px 1px 1px #fff;
+   background-image: linear-gradient(to bottom, rgba(100, 100, 100, 0.1), rgba(100, 100, 100, 0.3));
+}
+
+#postcode > input:valid ~ button:hover,
+#postcode > textarea:valid ~ button:hover {
+   background-image: linear-gradient(to bottom, rgba(129, 75, 0, 0.2), rgba(129, 75, 0. 0.4));
 }
